@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Oprah Likes You. And so do other people.</title>
+
+  <style>
+
+    /* Basic CSS comment */ 
+    body {
+      background: #fff;
+      color: white;
+      width: 960px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 80px;
+      color: #333 ;
+      text-align:center;
+    }
+
+    img {
+      width:350px;
+      height:220px;
+    }
+
+  </style>
+  <script>
+  var username = prompt("Hello, who are you?");
+  var car = new Array(("BMW" + '</br>' + "<img src='bmw.jpg'>"), ("Mercedes" + '</br>' + "<img src='mercedes.jpg'>"), ("Chevrolet" + '</br>' + "<img src='chevrolet.jpg'>"), "VW" + '</br>' + "<img src='vw.jpg'>");
+  var carImage = new Array("<img src='bmw.jpg'>", "<img src='mercedes.jpg'>", "<img src='chevrolet.jpg'>")
+  var randomNumberCar = Math.floor(Math.random()*car.length);
+
+  if (username==="Chris") {
+    document.write("<h1>" + "<img src='oprah.jpg'>" + '</br>' + username + '</br>' + "you won a " + car[randomNumberCar] + "</h1>");
+  } else if (username==="Mathias") {
+    document.write("<h1>" + "<img src='oprah.jpg'>" + '</br>' + username + '</br>' + "you won a " + car[randomNumberCar] + "</h1>");
+  } else {
+    document.write("<h1>" + "<img src='oprah.jpg'>" + '</br>' + username + "!</h1>");
+  }
+
+  </script>
+
+</head>
+
+<body>
+  
+</body>
+
+</html>

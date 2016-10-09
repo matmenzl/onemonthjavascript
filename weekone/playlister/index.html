@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="Playlister - Surprise Yourself With Music">
+		<meta name="keywords" content="Put on your dancing shoes">
+
+		<title>Playlister</title>
+		
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+
+		<script>
+		
+			// genres
+			var genre = [
+				'Indie',
+				'Rock',
+				'Hiphop',
+				'Punk Rock',
+				'Electro',
+				'Pop'
+			];
+
+			// bands
+			var bands = [
+				'Pavement',
+				'Mudhoney',
+				'Beastie Boys',
+				'The Clash',
+				'Autechre',
+				'Madonna'
+			];
+
+			// youtube ids
+			var id = [
+				'QTTgpTeb0Z8',
+				'CsjSDQ_MrV8',
+				'LItOrlOi9SA',
+				'FwrtjHxtkFo',
+				'vqiLFm6WAEU',
+				'VPFyYwOccSM'
+			];
+
+			var background = [
+				'#00ff4e',
+				'#ffb100',
+				'#2196f3',
+				'#f32148',
+				'#acf321',
+				'#ef00ff'
+			];
+
+
+			var randomNumber = Math.floor(Math.random()*genre.length);
+			var genres = genre[randomNumber];
+			var bandname = bands[randomNumber];
+			var youtubeId = id[randomNumber];
+			var backgrounds = background[randomNumber];
+
+			document.write("How about you listen to <strong>" + genres + "</strong> from <strong>" + bandname + "</strong>?" + "</br>");
+	
+			document.write('<iframe width="560" height="315" src="http://www.youtube.com/embed/' + youtubeId + '?autoplay=1" frameborder="0" allowfullscreen></iframe>')
+
+			document.body.style.backgroundColor = backgrounds;
+
+		</script>
+	</head>
+	<body>
+	<div>
+	<input type="button" value="Neeext please" onClick="window.location.reload()">
+	</div>
+	</body>
+</html>

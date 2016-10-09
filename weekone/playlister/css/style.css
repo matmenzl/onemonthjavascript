@@ -1,0 +1,22 @@
+
+body {
+	padding: 15px;
+	font-size: 30px;
+  text-align:center;
+}
+
+button {
+  border-style: none;
+  border: 1px solid black;
+  background: white;
+  border-radius: 3px;
+}
+
+input:hover {
+  border-style: none;
+  border: 1px solid black;
+  background-color: black;
+  color:white;
+  border-radius: 3px;
+}
+
