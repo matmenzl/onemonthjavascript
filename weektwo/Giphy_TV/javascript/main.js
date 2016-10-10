@@ -23,28 +23,23 @@ function showGiphs(data){
   var imageURLs = response.data;
   var box = document.querySelector(".box");
 
-
-    for(var i = 0; i < imageURLs.length; i++) {
-
-        var src = imageURLs[i].images.fixed_height.url;
-
-        //loop works outside of setTimout
-        // clearTV();
-        box.innerHTML = box.innerHTML + '<img src="' + src + '">';
-
-        setTimeout(function(){
-          //inside setTimout same gif gets printed in the defined intervall
-          console.log(src);
-          //iteration gets passed through though
-          // clearTV();
-          // box.innerHTML = box.innerHTML + '<img src="' + src + '">';
-      },2000*i);
+  for(i = 0; i < imageURLs.length; i++) {
+        setDelay(i)
     };
+
+    function setDelay(x) {
+      setTimeout(function(){
+        var src = imageURLs[x].images.fixed_height.url;
+        box.innerHTML = '<img src="' + src + '">';
+      }, 5000*i);
+    }
   };
 
-  function clearTV() {
-      document.querySelector(".box").innerHTML = "";    
-  };
+
+  // article that helped: https://coderwall.com/p/_ppzrw/be-careful-with-settimeout-in-loops with setTimout in foor loops
+
+
+
 
 
 
