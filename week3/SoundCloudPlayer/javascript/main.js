@@ -34,7 +34,6 @@ UI.submitClick();
 UI.clearSearch = function() {
     
     document.querySelector(".search-results").innerHTML = "";    
-    
 }
 UI.clearSearch();
 
@@ -132,20 +131,40 @@ SoundCloudAPI.renderTracks = function(tracks) {
 
 SoundCloudAPI.getEmbed = function(trackURL) {
   SC.oEmbed(trackURL, {
-    auto_play: true
+    auto_play: false
   }).then(function(embed){
     console.log('oEmbed response: ', embed);
-
-
 
       var sideBar = document.querySelector('.js-playlist');
       var box = document.createElement('div');
       box.innerHTML = embed.html;
 
-      sideBar.insertBefore(box, sideBar.firstChild);
-      localStorage.setItem("key", "sidebar.innerHTML");
+      sideBar.appendChild(box, sideBar.firstChild);
+      localStorage.setItem("key", sideBar.innerHTML);
 
   });
 
-};
+}
+
+var sideBar = document.querySelector(".js-playlist");
+sideBar.innerHTML = localStorage.getItem('key');
+
+
+// 5. delete playlist
+
+UI.deletePlaylist = function () {
+
+  var sideBar = document.querySelector('sidebar');
+  localStorage.removeItem("key", 'sideBar.innerHTML');
+
+  }
+
+//create delete button
+var sideBar = document.querySelector('.js-sidebar');
+var button = document.createElement('div');
+button.classList.add('ui', 'bottom', 'attached', 'button', 'js-button');
+sideBar.appendChild(button);
+
+
+// 6. skip to next song in playlist
 
