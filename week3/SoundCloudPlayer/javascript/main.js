@@ -120,8 +120,6 @@ SoundCloudAPI.renderTracks = function(tracks) {
       SoundCloudAPI.getEmbed(track.permalink_url);
     });
 
-
-
   });
 
 };
@@ -154,16 +152,25 @@ sideBar.innerHTML = localStorage.getItem('key');
 
 UI.deletePlaylist = function () {
 
-  var sideBar = document.querySelector('sidebar');
-  localStorage.removeItem("key", 'sideBar.innerHTML');
+  //create delete button and text in delete button
+  var deletebutton = document.createElement('button');
+  var text = document.createTextNode('Delete Playlist');
+  deletebutton.appendChild(text);
+  var jsPlaylist = document.querySelector('.js-playlist');
+  jsPlaylist.appendChild(deletebutton);
 
-  }
+  //click event on delete button
+    deletebutton.addEventListener('click', function(){
+      console.log('delete');
+      var sideBar = document.querySelector(".js-playlist");
+      localStorage.clear(sideBar);
+    });
 
-//create delete button
-var sideBar = document.querySelector('.js-sidebar');
-var button = document.createElement('div');
-button.classList.add('ui', 'bottom', 'attached', 'button', 'js-button');
-sideBar.appendChild(button);
+  };
+
+  UI.deletePlaylist();
+
+
 
 
 // 6. skip to next song in playlist
